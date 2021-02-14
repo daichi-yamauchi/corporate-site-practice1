@@ -216,7 +216,20 @@ h1 {
 
 /*** メインビジュアル 重要なお知らせ ***/
 .main-visual {
+  margin-top: 100px;
   margin-bottom: 100px;
+}
+
+@media screen and (max-width: 1400px) {
+  .main-visual {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .main-visual {
+    margin-top: 0;
+  }
 }
 
 .main-image {

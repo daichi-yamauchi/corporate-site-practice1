@@ -169,7 +169,14 @@ h1 {
 /*** メインビジュアル 重要なお知らせ ***/
 
 .main-visual {
+  margin-top: 100px;
   margin-bottom: 100px;
+  @include mq() {
+    margin-top: 60px;
+  }
+  @include mq(tab) {
+    margin-top: 0;
+  }
 }
 
 .main-image {

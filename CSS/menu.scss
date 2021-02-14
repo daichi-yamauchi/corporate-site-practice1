@@ -1,6 +1,18 @@
 @import "definitions.scss";
 
+header {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  background-color: #fff;
+  border-bottom: solid 1px #eee;
+}
+
 @include mq(tab) {
+  header {
+    position: relative;
+  }
+
   #nav-menu {
     display: none;
     &.hamburger-menu {
