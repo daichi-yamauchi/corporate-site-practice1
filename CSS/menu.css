@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/******************
+ * mixinの定義 *
+ ******************/
+@media screen and (max-width: 1024px) {
+  #nav-menu {
+    display: none;
+  }
+  #nav-menu.hamburger-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 80;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  #nav-menu.hamburger-menu ul {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    height: 400px;
+  }
+  #nav-menu.hamburger-menu ul .nav-item {
+    font-size: 3rem;
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-width: 599px) {
+  #nav-menu.hamburger-menu ul .nav-item {
+    font-size: 2rem;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .menu-list {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+  .menu-item {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-family: serif;
+  }
+  #hamburger-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 90;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 60px;
+    height: 60px;
+  }
+  .bun,
+  .bun:before,
+  .bun:after {
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: rgba(153, 153, 153, 0.5);
+    border-radius: 3px;
+    content: "";
+  }
+  .bun:before {
+    bottom: 8px;
+  }
+  .bun:after {
+    top: 8px;
+  }
+  .in-open .bun {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+  }
+  .in-open .bun::before {
+    bottom: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .in-open .bun::after {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+/*# sourceMappingURL=menu.css.map */

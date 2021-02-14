@@ -297,7 +297,8 @@ h1 {
 }
 
 .strength-section .background-square2 {
-  width: 1450px;
+  max-width: calc(87.5% + (100vw-1280px) / 2);
+  width: calc(87.5% + 5vw);
   top: -220px;
   bottom: 235px;
   left: 12.5%;
@@ -674,7 +675,10 @@ h1 {
   margin-left: auto;
   color: #fefefe;
   background-color: #040865;
-  padding: 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .contact-section .h2-subheadline {
@@ -716,15 +720,27 @@ h1 {
 }
 
 .tel {
-  font-size: 30px;
+  font-size: 3rem;
   letter-spacing: 0.05em;
   font-weight: bold;
+}
+
+@media screen and (max-width: 599px) {
+  .tel {
+    font-size: 2rem;
+  }
 }
 
 .tel-number {
   font-size: 48px;
   letter-spacing: 0.05em;
   font-weight: bold;
+}
+
+@media screen and (max-width: 599px) {
+  .tel-number {
+    font-size: 3rem;
+  }
 }
 
 .contact-btn {
@@ -743,7 +759,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 0.2em;
 }

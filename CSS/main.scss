@@ -1,33 +1,5 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
-
-/******************
- * mixinの定義 *
- ******************/
-
-$breakpoints: (
-  "md": "screen and (max-width: 1400px)",
-  "tab": "screen and (max-width: 1024px)",
-  "sp": "screen and (max-width: 599px)",
-) !default;
-
-@mixin mq($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
-  }
-}
-
-@mixin normal-width-contents {
-  max-width: 1280px;
-  width: 90%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-@mixin position_center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import "definitions.scss";
 
 /******************
  * 共通のスタイル *
@@ -247,7 +219,8 @@ h1 {
     left: -80px;
   }
   .background-square2 {
-    width: 1450px;
+    max-width: calc(87.5% + (100vw-1280px) / 2);
+    width: calc(87.5% + 5vw);
     top: -220px;
     bottom: 235px;
     left: 12.5%;
@@ -512,7 +485,10 @@ h1 {
   @include normal-width-contents();
   color: #fefefe;
   background-color: #040865;
-  padding: 35px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 10px;
+  padding-right: 10px;
   .h2-subheadline {
     margin-top: 10px;
   }
@@ -543,15 +519,21 @@ h1 {
 }
 
 .tel {
-  font-size: 30px;
+  font-size: 3rem;
   letter-spacing: 0.05em;
   font-weight: bold;
+  @include mq(sp) {
+    font-size: 2rem;
+  }
 }
 
 .tel-number {
   font-size: 48px;
   letter-spacing: 0.05em;
   font-weight: bold;
+  @include mq(sp) {
+    font-size: 3rem;
+  }
 }
 
 .contact-btn {
@@ -564,7 +546,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   letter-spacing: 0.2em;
 }
