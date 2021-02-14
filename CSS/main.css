@@ -9,8 +9,12 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-family: "YuGothic", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 section {
@@ -20,20 +24,24 @@ section {
 .large-headline {
   font-family: "Noto Sans JP", sans-serif;
   letter-spacing: 0.1em;
-  font-size: 48px;
+  font-size: 4.8rem;
 }
 
 .medium-headline {
   letter-spacing: 0.1em;
-  font-size: 30px;
+  font-size: 3rem;
 }
 
 .h2-subheadline {
-  font-size: 16px;
+  font-size: 1.6rem;
   letter-spacing: 0.2em;
   font-weight: bold;
   font-family: "Noto Sans JP", sans-serif;
   margin-top: 30px;
+}
+
+nav {
+  height: 100%;
 }
 
 nav > ul {
@@ -41,6 +49,7 @@ nav > ul {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
+  height: 100%;
 }
 
 .nav-item {
@@ -52,7 +61,16 @@ nav > ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-weight: bold;
+}
+
+@media screen and (max-width: 1400px) {
+  .nav-item {
+    font-size: 1.5rem;
+  }
 }
 
 .text-container {
@@ -62,7 +80,7 @@ nav > ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100px;
+  min-height: 100px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -70,14 +88,35 @@ nav > ul {
 }
 
 .text-container time {
-  padding: 30px;
-  font-size: 14px;
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 1.4rem;
   color: #959595;
 }
 
 .text-container p {
   padding-left: 30px;
+  padding-right: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   color: #303030;
+  text-align: left;
+}
+
+@media screen and (max-width: 1024px) {
+  .text-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+  .text-container time {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
 }
 
 .navy-style, .detail-btn, .nav-highlight {
@@ -87,19 +126,19 @@ nav > ul {
 
 .detail-btn {
   position: relative;
-  width: 300px;
-  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 300px;
+  height: 80px;
   margin: 0 auto;
-  font-size: 18px;
+  font-size: 1.8rem;
 }
 
 .detail-btn .Arrow-Right {
@@ -127,6 +166,7 @@ nav > ul {
           transform: rotate(45deg);
   position: absolute;
   right: 30px;
+  top: calc(50% - 4.2px);
 }
 
 /******************
@@ -149,14 +189,23 @@ header {
   color: #333;
 }
 
-header .nav-item {
-  height: 100px;
+@media screen and (max-width: 1400px) {
+  header {
+    height: 60px;
+  }
 }
 
 h1 {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 36px;
+  font-size: 3.6rem;
   margin-left: 80px;
+}
+
+@media screen and (max-width: 1400px) {
+  h1 {
+    font-size: 3rem;
+    margin-left: 30px;
+  }
 }
 
 .nav-highlight {
@@ -170,22 +219,35 @@ h1 {
   margin-bottom: 100px;
 }
 
+.main-image {
+  width: 100%;
+}
+
 .info-container {
   position: relative;
   bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 1280px;
+  max-width: 1280px;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
 }
 
+@media screen and (max-width: 1024px) {
+  .info-container {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .info-container {
+    display: block;
+  }
+}
+
 .h3-container {
-  height: 100px;
   width: 270px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -198,20 +260,37 @@ h1 {
           justify-content: center;
 }
 
+@media screen and (max-width: 599px) {
+  .h3-container {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
 .h3-container h3 {
-  font-size: 22px;
+  font-size: 2.2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .h3-container h3 {
+    font-size: 1.8rem;
+  }
 }
 
 /*** 当社の強み ***/
 .strength-section {
-  width: 1280px;
+  max-width: 1280px;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
   position: relative;
 }
 
 .strength-section .background-square1 {
-  width: 720px;
+  max-width: 720px;
+  width: 56.25%;
+  min-width: 400px;
   height: 400px;
   top: -80px;
   left: -80px;
@@ -219,9 +298,9 @@ h1 {
 
 .strength-section .background-square2 {
   width: 1450px;
-  height: 790px;
   top: -220px;
-  left: 160px;
+  bottom: 235px;
+  left: 12.5%;
 }
 
 .strength-section .large-headline {
@@ -240,11 +319,24 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-bottom: 60px;
+}
+
+@media screen and (max-width: 1024px) {
+  .strengths-container {
+    display: block;
+  }
 }
 
 .strength-item {
-  width: 400px;
+  width: 31.25%;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .strength-item {
+    width: 100%;
+  }
 }
 
 .strength-item .strength-title {
@@ -268,8 +360,14 @@ h1 {
   margin-left: 20px;
 }
 
+.strength-item img {
+  width: 100%;
+  max-width: 400px;
+}
+
 .strength-item p {
   line-height: 2;
+  text-align: left;
 }
 
 /*** 事業内容 製品情報 ***/
@@ -279,37 +377,122 @@ h1 {
 
 .business-products-section .background-square1 {
   width: 100vw;
-  height: 550px;
   top: 235px;
+  bottom: 235px;
 }
 
-.side-image-container {
+@media screen and (max-width: 1400px) {
+  .business-products-section .background-square1 {
+    top: 148.3px;
+    bottom: 148.3px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .business-products-section .background-square1 {
+    top: 23.728vw;
+    bottom: 136.5px;
+  }
+}
+
+.side-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.side-image {
+@media screen and (max-width: 1024px) {
+  .side-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.side-image-container {
   width: 800px;
+}
+
+@media screen and (max-width: 1400px) {
+  .side-image-container {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .side-image-container {
+    width: 80%;
+    margin: auto;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+.side-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .side-content {
   width: 640px;
-  padding: 80px;
   background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (max-width: 1400px) {
+  .side-content {
+    width: 524px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .side-content {
+    width: 80%;
+    margin: auto;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
 }
 
 .side-content .medium-headline {
   margin-bottom: 35px;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 1400px) {
+  .side-content .medium-headline {
+    margin-bottom: 10px;
+  }
 }
 
 .side-content p {
   line-height: 2;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .side-content .detail-btn {
   margin-top: 40px;
   margin-right: 0;
+}
+
+@media screen and (max-width: 1400px) {
+  .side-content .detail-btn {
+    margin-top: 10px;
+  }
 }
 
 .right-justify {
@@ -321,10 +504,10 @@ h1 {
 
 /*** 会社案内 採用情報 ***/
 .company-recruit-section {
-  width: 1280px;
+  max-width: 1280px;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
-  height: 750px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -334,21 +517,43 @@ h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  max-height: 750px;
+  height: 52.7vw;
   position: relative;
 }
 
+@media screen and (max-width: 1024px) {
+  .company-recruit-section {
+    height: 55vw;
+  }
+}
+
 .company-recruit-section .background-square1 {
-  width: 800px;
-  height: 650px;
+  width: 62.5%;
+  height: 45.7vw;
+  max-height: 650px;
   top: 0;
   left: 0;
 }
 
+@media screen and (max-width: 1024px) {
+  .company-recruit-section .background-square1 {
+    height: 50vw;
+  }
+}
+
 .company-recruit-section .background-square2 {
-  width: 800px;
-  height: 650px;
+  width: 62.5%;
+  height: 45.7vw;
+  max-height: 650px;
   bottom: 0;
   right: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .company-recruit-section .background-square2 {
+    height: 50vw;
+  }
 }
 
 .image-title-container {
@@ -358,13 +563,18 @@ h1 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-right: 100px;
-  margin-left: 100px;
+  margin-right: 7.8%;
+  margin-left: 7.8%;
+}
+
+.image-title-container img {
+  width: 100%;
+  display: block;
 }
 
 .image-title-item {
   position: relative;
-  margin: 20px;
+  margin: 1.6%;
 }
 
 .image-text-container {
@@ -381,8 +591,26 @@ h1 {
           align-items: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .image-text-container {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .image-text-container {
+    height: 50px;
+  }
+}
+
 .image-text-container h3 {
   padding-left: 30px;
+}
+
+@media screen and (max-width: 599px) {
+  .image-text-container h3 {
+    font-size: 2rem;
+  }
 }
 
 /*** 新着情報 ***/
@@ -391,12 +619,20 @@ h1 {
   padding: 75px;
 }
 
+@media screen and (max-width: 1400px) {
+  .news-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .news-section h2 {
   color: #333;
 }
 
 .news-container {
-  width: 1280px;
+  max-width: 1280px;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
@@ -430,7 +666,10 @@ h1 {
   display: -ms-flexbox;
   display: flex;
   text-align: center;
-  width: 1280px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  max-width: 1280px;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
   color: #fefefe;
@@ -442,10 +681,22 @@ h1 {
   margin-top: 10px;
 }
 
+@media screen and (max-width: 1024px) {
+  .contact-section {
+    display: block;
+  }
+}
+
 .contact-container {
   width: 50%;
   padding-top: 35px;
   padding-bottom: 45px;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-container {
+    width: 100%;
+  }
 }
 
 .contact-container p {
@@ -456,6 +707,12 @@ h1 {
 .contact-container + .contact-container {
   border-left: solid 1px #fefefe;
   padding-top: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact-container + .contact-container {
+    border: none;
+  }
 }
 
 .tel {
@@ -500,7 +757,8 @@ footer {
 }
 
 .footer-container {
-  width: 1280px;
+  max-width: 1280px;
+  width: 90%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -514,7 +772,7 @@ footer {
   margin-bottom: 40px;
 }
 
-.footer-container .nav-item:nth-child(1) {
+.padding-left-0 {
   padding-left: 0;
 }
 
@@ -525,6 +783,19 @@ footer {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-menu {
+    display: inline;
+  }
+  .footer-nav-item {
+    padding-left: 10px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
 }
 
 .copyright {
