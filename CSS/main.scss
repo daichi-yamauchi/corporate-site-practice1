@@ -18,6 +18,20 @@ html {
 
 section {
   margin-bottom: 160px;
+  @include mq(tab) {
+    margin-bottom: 100px;
+  }
+  @include mq(sp) {
+    margin-bottom: 50px;
+  }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000;
+  text-decoration: none;
 }
 
 .large-headline {
@@ -51,11 +65,15 @@ nav {
 .nav-item {
   padding-left: 20px;
   padding-right: 20px;
-  @include position_center();
   font-weight: bold;
   @include mq() {
     font-size: 1.5rem;
   }
+}
+
+.menu-link {
+  height: 100%;
+  @include position_center();
 }
 
 .text-container {
@@ -150,20 +168,27 @@ header {
 }
 
 h1 {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 3.6rem;
   margin-left: 80px;
   @include mq() {
-    font-size: 3rem;
     margin-left: 30px;
+  }
+  a {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 3.6rem;
+    @include mq() {
+      font-size: 3rem;
+    }
   }
 }
 
 .nav-highlight {
   @extend .navy-style;
-  font-weight: bold;
   padding-left: 50px;
   padding-right: 50px;
+  a {
+    color: #fff;
+    font-weight: bold;
+  }
 }
 
 /*** メインビジュアル 重要なお知らせ ***/

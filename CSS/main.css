@@ -21,6 +21,26 @@ section {
   margin-bottom: 160px;
 }
 
+@media screen and (max-width: 1024px) {
+  section {
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  section {
+    margin-bottom: 50px;
+  }
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #000;
+  text-decoration: none;
+}
+
 .large-headline {
   font-family: "Noto Sans JP", sans-serif;
   letter-spacing: 0.1em;
@@ -55,6 +75,17 @@ nav > ul {
 .nav-item {
   padding-left: 20px;
   padding-right: 20px;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1400px) {
+  .nav-item {
+    font-size: 1.5rem;
+  }
+}
+
+.menu-link {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -64,13 +95,6 @@ nav > ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-weight: bold;
-}
-
-@media screen and (max-width: 1400px) {
-  .nav-item {
-    font-size: 1.5rem;
-  }
 }
 
 .text-container {
@@ -196,22 +220,34 @@ header {
 }
 
 h1 {
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 3.6rem;
   margin-left: 80px;
 }
 
 @media screen and (max-width: 1400px) {
   h1 {
-    font-size: 3rem;
     margin-left: 30px;
   }
 }
 
+h1 a {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 3.6rem;
+}
+
+@media screen and (max-width: 1400px) {
+  h1 a {
+    font-size: 3rem;
+  }
+}
+
 .nav-highlight {
-  font-weight: bold;
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.nav-highlight a {
+  color: #fff;
+  font-weight: bold;
 }
 
 /*** メインビジュアル 重要なお知らせ ***/
